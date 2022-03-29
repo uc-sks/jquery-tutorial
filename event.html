@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p id="p1">Click me too!</p>
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+</body>
+<script>
+    // click event on target element
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).hide();
+        });
+    });
+    // double click
+    $("p").dblclick(function () {
+        $(this).hide();
+    });
+    // mouse enter event
+    $("p").mouseenter(function () {
+        alert("You entered p!");
+    });
+    // mouse leave event
+    $("#p1").mouseleave(function () {
+        alert("Bye! You now leave p1!");
+    });
+    // // mouse down
+    $("#p1").mousedown(function () {
+        alert("Mouse down over p1!");
+    });
+    // mouse up
+    $("#p1").mouseup(function () {
+        alert("Mouse up over p1!");
+    });
+    // hover
+    $("#p1").hover(function () {
+        alert("You entered p1!");
+    },
+        function () {
+            alert("Bye! You now leave p1!");
+        });
+    // focus
+    $(document).ready(function () {
+        $("input").focus(function () {
+            $(this).css("background-color", "yellow");
+        });
+        $("input").blur(function () {
+            $(this).css("background-color", "green");
+        });
+    });
+</script>
+
+</html>
